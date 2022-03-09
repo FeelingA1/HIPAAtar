@@ -26,7 +26,7 @@ class Quiz extends Component {
     // Same issue as above
     playAgain = () => {
         this.getQuestions();
-        this.setState({score: 0, responses: 0});
+        this.setState({score: 0, answered: 0});
     }
 
     computeAnswer = (response, correct) => {

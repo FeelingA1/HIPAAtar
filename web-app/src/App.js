@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/Navbar"
 import Goals from "./pages/Goals"
-import Messages from "./pages/Messages"
+import Messages from "./pages/Messages/Messages"
 import Portfolio from "./pages/Portfolio"
 import Quizzes from "./pages/Quizzes"
 import Tips from "./pages/Tips"

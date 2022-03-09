@@ -25,6 +25,9 @@ const Navbar= () =>{
     return (
       <nav className="navbar">
         <div className="navbar-container">
+        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+                        [Site Name]
+        </Link>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
             <Link to="/" className='nav-links'>Portfolio</Link>

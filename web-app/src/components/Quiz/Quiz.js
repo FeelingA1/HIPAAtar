@@ -1,12 +1,14 @@
 import React, {Component} from "react"
-import getQuiz from './QuestionBank'
+import quiz1 from './QuestionBanks/QuestionBank1'
+import quiz2 from './QuestionBanks/QuestionBank2'
+import quiz3 from './QuestionBanks/QuestionBank3'
 import QuestionBox from "./QuestionBox"
 import Result from "./ResultBox"
 
 class Quiz extends Component {
     // Make this editable based on Quiz
     numQuestions = 5;
-    quizNumber = 1;
+    quizNumber = 2;
     
     constructor() {
         super();
@@ -20,22 +22,19 @@ class Quiz extends Component {
     // Need some way to specify quiz (probably string param corresponding to each quiz)
     getQuestions = (n) => {
         console.log("Entered getQuestions");
-        /* if(n === 1) {
-            questionBank1().then(question => {
+        if(n === 1) {
+            quiz1().then(question => {
                 this.setState({questionBank: question});
             });
         } else if (n === 2) {
-            questionBank2().then(question => {
+            quiz2().then(question => {
                 this.setState({questionBank: question});
             });
         } else if (n === 3) {
-            questionBank3().then(question => {
+            quiz3().then(question => {
                 this.setState({questionBank: question});
             });
-        } */
-        getQuiz(n).then(question => {
-            this.setState({questionBank: question});
-        });
+        }
     };
 
     // Same issue as above

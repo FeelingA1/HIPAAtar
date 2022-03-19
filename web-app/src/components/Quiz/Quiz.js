@@ -8,7 +8,7 @@ import Result from "./ResultBox"
 class Quiz extends Component {
     // Make this editable based on Quiz
     numQuestions = 5;
-    quizNumber = 2;
+    quizNumber = 3;
     
     constructor() {
         super();
@@ -20,17 +20,17 @@ class Quiz extends Component {
     }
 
     // Need some way to specify quiz (probably string param corresponding to each quiz)
-    getQuestions = (n) => {
+    getQuestions = () => {
         console.log("Entered getQuestions");
-        if(n === 1) {
+        if(this.quizNumber === 1) {
             quiz1().then(question => {
                 this.setState({questionBank: question});
             });
-        } else if (n === 2) {
+        } else if (this.quizNumber === 2) {
             quiz2().then(question => {
                 this.setState({questionBank: question});
             });
-        } else if (n === 3) {
+        } else if (this.quizNumber === 3) {
             quiz3().then(question => {
                 this.setState({questionBank: question});
             });
@@ -39,7 +39,7 @@ class Quiz extends Component {
 
     // Same issue as above
     playAgain = () => {
-        this.getQuestions(this.quizNumber);
+        this.getQuestions();
         this.setState({score: 0, answered: 0});
     }
 
@@ -56,7 +56,7 @@ class Quiz extends Component {
     }
 
     componentDidMount() {
-        this.getQuestions(this.quizNumber);
+        this.getQuestions();
     }
 
     render() {

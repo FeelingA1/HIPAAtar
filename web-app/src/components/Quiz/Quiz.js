@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import { questionBank1, questionBank2, questionBank3 } from './QuestionBank'
+import getQuiz from './QuestionBank'
 import QuestionBox from "./QuestionBox"
 import Result from "./ResultBox"
 
@@ -33,7 +33,7 @@ class Quiz extends Component {
                 this.setState({questionBank: question});
             });
         } */
-        questionBank1().then(question => {
+        getQuiz(n).then(question => {
             this.setState({questionBank: question});
         });
     };

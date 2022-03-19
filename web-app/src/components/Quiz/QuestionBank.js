@@ -97,6 +97,16 @@ const quiz3 = [
     }
 ];
 
+export default (quizNum, n = 5) => {
+    if(quizNum === 1) {
+        Promise.resolve(quiz1.sort(() => 0.5 - Math.random()).slice(0,n));
+    } else if (quizNum === 2) {
+        Promise.resolve(quiz2.sort(() => 0.5 - Math.random()).slice(0,n));
+    } else if (quizNum === 3) {
+        Promise.resolve(quiz3.sort(() => 0.5 - Math.random()).slice(0,n));
+    }
+};
+
 // Grab 5 questions from this bank
 export function questionBank1 (n = 5) {
     Promise.resolve(quiz1.sort(() => 0.5 - Math.random()).slice(0,n));
@@ -110,13 +120,5 @@ export function questionBank3 (n = 5) {
     Promise.resolve(quiz3.sort(() => 0.5 - Math.random()).slice(0,n));
 }
 
-export default questions (quizNum, n = 5) {
-    if(quizNum === 1) {
-        Promise.resolve(quiz1.sort(() => 0.5 - Math.random()).slice(0,n));
-    } else if (quizNum === 2) {
-        Promise.resolve(quiz2.sort(() => 0.5 - Math.random()).slice(0,n));
-    } else if (quizNum === 3) {
-        Promise.resolve(quiz3.sort(() => 0.5 - Math.random()).slice(0,n));
-    }
-};
+
     

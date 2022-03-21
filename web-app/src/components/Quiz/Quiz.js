@@ -8,10 +8,9 @@ import Result from "./ResultBox"
 class Quiz extends Component {
     // Make this editable based on Quiz
     numQuestions = 5;
-    quizNumber = 3;
     
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             questionBank: [],
             score: 0,
@@ -22,15 +21,15 @@ class Quiz extends Component {
     // Need some way to specify quiz (probably string param corresponding to each quiz)
     getQuestions = () => {
         console.log("Entered getQuestions");
-        if(this.quizNumber === 1) {
+        if(this.props.quizNumber === 1) {
             quiz1().then(question => {
                 this.setState({questionBank: question});
             });
-        } else if (this.quizNumber === 2) {
+        } else if (this.props.quizNumber === 2) {
             quiz2().then(question => {
                 this.setState({questionBank: question});
             });
-        } else if (this.quizNumber === 3) {
+        } else if (this.props.quizNumber === 3) {
             quiz3().then(question => {
                 this.setState({questionBank: question});
             });

@@ -1,7 +1,8 @@
-import React, {useState} from "react"
+import React, {useState} from "react";
 
-const QuestionBox = ({question, options, selected}) => {
-    const [answer, setAnswer] = useState(options);
+var QuestionBox = ({question, options, selected}) => {
+    var [answer, setAnswer] = useState(options);
+    console.log("Current question is... " + question);
     return (
         <div className="questionBox">
             <div className="question">{question}</div>
@@ -10,8 +11,8 @@ const QuestionBox = ({question, options, selected}) => {
                     key={index}
                     className="answerBtn"
                     onClick={()=> {
-                        setAnswer();
                         selected(text);
+                        setAnswer(answer);
                     }}> {text}
                 </button>
             ))}

@@ -6,11 +6,11 @@ import QuestionBox from "./QuestionBox"
 import Result from "./ResultBox"
 
 class Quiz extends Component {
-    // Make this editable based on Quiz
     numQuestions = 5;
     quizNumber = 1;
     
     constructor() {
+        console.log("Entered constructor");
         super();
         this.state = {
             questionBank: [],
@@ -19,44 +19,56 @@ class Quiz extends Component {
         };
     }
 
-    // Need some way to specify quiz (probably string param corresponding to each quiz)
     getQuestions = () => {
         console.log("Entered getQuestions");
         if(this.quizNumber === 1) {
             quiz1().then(question => {
-                this.setState({questionBank: question});
+                console.log("Set questionBank (quiz1), score and numAnswered");
+                this.setState({questionBank: question, score: 0, numAnswered: 0});
             });
         } else if (this.quizNumber === 2) {
             quiz2().then(question => {
-                this.setState({questionBank: question});
+                console.log("Set questionBank (quiz2), score and numAnswered");
+                this.setState({questionBank: question, score: 0, numAnswered: 0});
             });
         } else if (this.quizNumber === 3) {
             quiz3().then(question => {
-                this.setState({questionBank: question});
+                console.log("Set questionBank (quiz3), score and numAnswered");
+                this.setState({questionBank: question, score: 0, numAnswered: 0});
             });
         }
+        
     };
 
     // Same issue as above
     playAgain = () => {
+        console.log("Entered playAgain");
         this.getQuestions();
-        this.setState({score: 0, numAnswered: 0});
+    }
+
+    nextQuiz = () => {
+        console.log("Entered nextQuiz");
+        this.quizNumber = this.quizNumber + 1;
+        if(this.quizNumber === 4) {
+            this.quizNumber = 1;
+        }
+        this.getQuestions();
     }
 
     computeAnswer = (response, correct) => {
         console.log("Entered computeAnswer");
         if(response === correct) {
-            console.log("Correct response");
+            console.log("Correct response, update score");
             this.setState({
                 score: this.state.score + 1
             });
         }
-        console.log("Setting state again");
         /* for(let x = 0; x < 5; x++) {
             if(correct === this.state.questionBank[x].correct) {
                 this.answerSelected(x, response);
             }
         } */
+        console.log("Update numAnswered (computeAnswer)");
         this.setState({
             numAnswered: this.state.numAnswered < this.numQuestions ? this.state.numAnswered + 1
             : this.numQuestions
@@ -72,10 +84,12 @@ class Quiz extends Component {
     } */
 
     componentDidMount() {
+        console.log("Entered componentDidMount");
         this.getQuestions();
     }
 
     render() {
+        console.log("Entered Quiz.render()");
         return (<div className="container">
             <div className="title">
                 QuizName    
@@ -91,7 +105,8 @@ class Quiz extends Component {
             {
                 this.state.numAnswered === 5
                 ? (<Result score={this.state.score}
-                    playAgain={this.playAgain}/>)
+                    playAgain={this.playAgain}
+                    nextQuiz={this.nextQuiz}/>)
                 : null
             }        
         </div>)

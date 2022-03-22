@@ -15,7 +15,8 @@ class Quiz extends Component {
         this.state = {
             questionBank: [],
             score: 0,
-            numAnswered: 0
+            numAnswered: 0,
+            answered: [false, false, false, false, false]
         };
     }
 
@@ -24,17 +25,17 @@ class Quiz extends Component {
         if(this.quizNumber === 1) {
             quiz1().then(question => {
                 console.log("Set questionBank (quiz1), score and numAnswered");
-                this.setState({questionBank: question, score: 0, numAnswered: 0});
+                this.setState({questionBank: question, score: 0, numAnswered: 0, answered: [false, false, false, false, false]});
             });
         } else if (this.quizNumber === 2) {
             quiz2().then(question => {
                 console.log("Set questionBank (quiz2), score and numAnswered");
-                this.setState({questionBank: question, score: 0, numAnswered: 0});
+                this.setState({questionBank: question, score: 0, numAnswered: 0, answered: [false, false, false, false, false]});
             });
         } else if (this.quizNumber === 3) {
             quiz3().then(question => {
                 console.log("Set questionBank (quiz3), score and numAnswered");
-                this.setState({questionBank: question, score: 0, numAnswered: 0});
+                this.setState({questionBank: question, score: 0, numAnswered: 0, answered: [false, false, false, false, false]});
             });
         }
         
@@ -56,17 +57,26 @@ class Quiz extends Component {
 
     computeAnswer = (response, correct) => {
         console.log("Entered computeAnswer");
-        if(response === correct) {
-            console.log("Correct response, update score");
-            this.setState({
-                score: this.state.score + 1
-            });
+        // Increment score on correct response that hasn't already been filled
+        // Change answered when clicking on new question
+        for(let i = 0; i < this.numQuestions; i++) {
+            if(this.state.answered[i] === false && correct === this.state.questionBank[i].correct) {
+                let updatedScore = this.state.score;
+                if(response === correct) {
+                    console.log("Correct response, score + 1");
+                    updatedScore = updatedScore + 1;
+                }
+                let nowAnswered = [...this.state.answered];
+                nowAnswered[i] = true;
+                console.log("Update numAnswered (computeAnswer)");
+                this.setState({answered: nowAnswered, 
+                    numAnswered: this.state.numAnswered < this.numQuestions ? this.state.numAnswered + 1
+                    : this.numQuestions,
+                    score: updatedScore
+                });
+                break;
+            }
         }
-        console.log("Update numAnswered (computeAnswer)");
-        this.setState({
-            numAnswered: this.state.numAnswered < this.numQuestions ? this.state.numAnswered + 1
-            : this.numQuestions
-        })
     }
 
     componentDidMount() {

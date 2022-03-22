@@ -3,6 +3,7 @@ import React, {useState} from "react";
 var QuestionBox = ({question, options, selected}) => {
     var [answer, setAnswer] = useState(options);
     console.log("Current question is... " + question);
+    console.log("The answers are: " + options);
     return (
         <div className="questionBox">
             <div className="question">{question}</div>
@@ -12,7 +13,7 @@ var QuestionBox = ({question, options, selected}) => {
                     className="answerBtn"
                     onClick={()=> {
                         selected(text);
-                        setAnswer(answer);
+                        setAnswer([text]);
                     }}> {text}
                 </button>
             ))}

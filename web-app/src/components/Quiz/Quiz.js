@@ -8,8 +8,7 @@ import Result from "./ResultBox"
 class Quiz extends Component {
     // Make this editable based on Quiz
     numQuestions = 5;
-    
-    constructor(props) {
+        constructor(props) {
         super(props);
         this.state = {
             questionBank: [],
@@ -58,12 +57,17 @@ class Quiz extends Component {
         this.getQuestions();
     }
 
+    componentDidUpdate(prevProps) {
+        if(prevProps.quizNumber !== this.props.quizNumber) {
+            this.getQuestions();
+        }
+    }
+
     render() {
         return (<div className="container">
             <div className="title">
-                QuizName    
+               <h2> {this.props.quizName} </h2>
             </div>
-
             {this.state.questionBank.length > 0 &&
             this.state.answered < 5 &&
             this.state.questionBank.map(({question, answers, correct, questionId}) => 

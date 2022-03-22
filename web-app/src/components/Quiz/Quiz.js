@@ -40,7 +40,6 @@ class Quiz extends Component {
         
     };
 
-    // Same issue as above
     playAgain = () => {
         console.log("Entered playAgain");
         this.getQuestions();
@@ -63,25 +62,12 @@ class Quiz extends Component {
                 score: this.state.score + 1
             });
         }
-        /* for(let x = 0; x < 5; x++) {
-            if(correct === this.state.questionBank[x].correct) {
-                this.answerSelected(x, response);
-            }
-        } */
         console.log("Update numAnswered (computeAnswer)");
         this.setState({
             numAnswered: this.state.numAnswered < this.numQuestions ? this.state.numAnswered + 1
             : this.numQuestions
         })
     }
-
-    /* answerSelected(question, selected) {
-        var updatedBank = new Array(this.state.questionBank);
-        updatedBank[question].answers = selected;
-        this.setState({
-            questionBank: updatedBank
-        })
-    } */
 
     componentDidMount() {
         console.log("Entered componentDidMount");

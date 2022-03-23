@@ -1,5 +1,6 @@
 import React from 'react';
 import iconfont from '../iconfont/iconfont.css';
+import style from './Expansion.css';
 // import PropTypes from 'prop-types';
 
 // 展开收起组件
@@ -33,9 +34,9 @@ class ArrowSlide extends React.Component {
 
     return (
 
-        <div style={{ marginTop: '10px' }}>
-          <a className="arrow-alide" onClick={this.handleToggleCondition}>{itemsName}<i className={`iconfont ${itemLable ? 'icon-shangjiantou' : 'icon-xiajiantou'}`} /></a>
-          <div style={{ transition: 'all .1s', maxHeight: itemLable ? '10000px' : '0px', overflow: 'hidden' }}>{this.props.children}</div>
+        <div  style={{ marginTop: '10px' }}>
+          <a className="panel-title" onClick={this.handleToggleCondition}>{itemsName}<i className={`iconfont ${itemLable ? 'icon-shangjiantou' : 'icon-xiajiantou'}`} /></a>
+          <div  style={{ transition: 'all .1s', maxHeight: itemLable ? '10000px' : '0px', overflow: 'hidden'}}>{this.props.children}</div>
         </div>
 
     );

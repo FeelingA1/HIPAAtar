@@ -14,8 +14,29 @@
 .icon-xiajiantou:before {
   content: "\eb6d";
 }
+.primary .panel-title a:after {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    position: absolute;
+    right: 0.5em;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 .icon-shangjiantou:before {
   content: "\eb6e";
 }
+.primary .panel-title a:after {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    position: absolute;
+    right: 0.5em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 

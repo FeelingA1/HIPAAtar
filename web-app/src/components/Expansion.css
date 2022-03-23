@@ -1,0 +1,15 @@
+.panel-title {
+    position: relative;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0;
+    display: block;
+    text-decoration: none !important;
+    padding: 15px 15px;
+    color: #333;
+}
+.panel-context {
+    display: block;
+    padding: 15px 15px;
+    margin: 0;
+}

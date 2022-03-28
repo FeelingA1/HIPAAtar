@@ -3,22 +3,22 @@ import iconfont from '../iconfont/iconfont.css';
 import style from './Expansion.css';
 // import PropTypes from 'prop-types';
 
-// 展开收起组件
+
 class ArrowSlide extends React.Component {
   static defaultProps = {
     itemLable: false,
-    itemsName: '' // 检查项目名称// 是否展开
+    itemsName: ''
   };
   constructor(props) {
     super(props);
-    const { itemLable } = props; // 是否展开收起列表项
+    const { itemLable } = props;
     this.state = {
       itemLable
     };
   }
 
   /**
-   * 展开收起切换
+   *
    * @memberof EleItem
    */
   handleToggleCondition = () => {

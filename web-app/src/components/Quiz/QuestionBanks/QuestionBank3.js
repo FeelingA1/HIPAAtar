@@ -32,5 +32,6 @@ const quiz = [
 ];
 
 // Grab 5 questions from this bank
-export default (n = 5) =>
+const grabQuiz = (n = 5) =>
     Promise.resolve(quiz.sort(() => 0.5 - Math.random()).slice(0,n));
+export default grabQuiz;

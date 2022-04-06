@@ -144,7 +144,7 @@ class Quiz extends Component {
         console.log("Entered Quiz.render()");
         return (<div className="container">
             <div className="title">
-               <h2> {this.props.quizName} </h2>
+               <h2> Quiz {this.quizNumber} </h2>
             </div>
             <SelectionBar setQuiz1={this.setQuiz1}
                 setQuiz2={this.setQuiz2}

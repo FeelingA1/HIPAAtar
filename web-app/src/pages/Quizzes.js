@@ -3,7 +3,7 @@ import Quiz from '../components/Quiz/Quiz'
 
 
 const Quizzes = () =>{
-  const[quizNum, setQuizNum] = new useState(0)
+  /* const[quizNum, setQuizNum] = new useState(0)
   const[quizName, setQuizName] = new useState('')
   console.log('beginning ' + quizNum)
 
@@ -20,6 +20,13 @@ const Quizzes = () =>{
 
       {console.log('before quiz call ' + quizNum)}
       <Quiz quizName= {quizName} quizNumber = {quizNum}/>
+      {console.log("after quiz call " + quizNum)}
+    </div>
+  ); */
+  return (
+    <div>
+      <h3>Quizzes Page</h3>
+      <Quiz/>
     </div>
   );
 }

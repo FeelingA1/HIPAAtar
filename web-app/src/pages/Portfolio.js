@@ -1,5 +1,6 @@
 import React from 'react';
 import './Portfolio.css';
+import MessageForm from '../components/MessageForm.js';
 const Portfolio = () =>{
   return (
     <div className="portfolio-container">
@@ -8,7 +9,7 @@ const Portfolio = () =>{
           Avatar {/*place avatar component here*/}
         </div>
 
-        <button className="edit-avatar-btn">Edit My Avatar</button>
+        <button className="edit-avatar-btn" onClick={console.log("Editing My Avatar...")}>Edit My Avatar</button>
       </div>
 
       <div className="information-field">  
@@ -41,6 +42,10 @@ const Portfolio = () =>{
         </div>
       </div>
 
+      <div className="message-box">
+      <label className='formTitle'>New Message</label>
+          <MessageForm/>
+      </div>
 
     </div>
   );

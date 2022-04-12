@@ -1,8 +1,8 @@
-import './MessageForm.css'
+import './ChatBox.css'
 import React, { useState } from 'react';
 
 
-const MessageForm = () =>{
+const ChatBox = () =>{
     const [formData, updateFormData] = useState();
 
     const handleChange = (e) => {
@@ -51,4 +51,4 @@ const MessageForm = () =>{
     );
 }
 
-export default MessageForm
+export default ChatBox

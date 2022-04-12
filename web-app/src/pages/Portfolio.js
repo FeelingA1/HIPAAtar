@@ -1,6 +1,6 @@
 import React from 'react';
 import './Portfolio.css';
-import MessageForm from '../components/MessageForm.js';
+import ChatBox from '../components/ChatBox.js';
 const Portfolio = () =>{
   return (
     <div className="portfolio-container">
@@ -44,7 +44,7 @@ const Portfolio = () =>{
 
       <div className="message-box">
       <label className='formTitle'>New Message</label>
-          <MessageForm/>
+          <ChatBox/>
       </div>
 
     </div>

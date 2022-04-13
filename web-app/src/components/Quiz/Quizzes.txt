@@ -1,0 +1,22 @@
+The Quizzes page is broken up into multiple components:
+Quizzes.js: Quizzes page on site, just displays the Quiz component
+Quiz.js: Major quiz component handling quiz functionality including:
+    Fetching questions from the banks
+    Replaying quiz
+    Playing the next quiz
+    Scoring quiz
+    Validating user answers
+    Displaying SelectionBar/QuestionBox/ResultBox
+QuestionBanks: Multiple dummy question banks to represent 3 different quizzes 
+    along with an exported function to pull 5 random questions from the banks
+QuestionBox.js: Handles displaying the questions and answers
+SelectionBar.js: Handles displaying the specific quiz based on quiz number/name
+ResultBox.js: Shows quiz score after finishing with a play again and next quiz button
+
+Biggest features to implement going forward:
+
+1. Styling
+
+2. Creating real quizzes (replace dummy quizzes with usable quizzes)
+
+3. Connect quizzes to corresponding tips on tips page (Probably in result box)

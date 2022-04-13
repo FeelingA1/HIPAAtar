@@ -1,0 +1,22 @@
+The Messages page is broken up into several components:
+Messages.js: The messages page (displays other components)
+Messaging.js: The host component rendered by the Messages page
+    hosts MessageList and MessageForm componenets as well as handles 
+    new messages
+MessageList.js: List of messages already sent/received and are displayed on screen
+MessageForm.js: Handles typing and sending messages
+Message.js: Structure representing a specific message with author, body, and boolean if "I" sent the message
+Also various .css files for styling
+
+Biggest features to implement going forward:
+1. Networking such that users can send messages back and forth with each other.
+    Right now this is just framework and UI. Messages are sent nowhere except to be displayed on screen.
+    Also messages are lost after navigating away from the page.
+    This would best be accomplished by holding the messages on the backend database and posting/retreiving from said database
+    for every message to populate MessageList component.
+
+2. Transitioning messages to the backend:
+    explained above
+
+3. Styling:
+    Use the .css files to make this more attractive

@@ -1,0 +1,36 @@
+.goals-page-container {
+    display: flex;
+    margin: auto;
+    display: table;
+    align-items: flex-start;
+}
+
+.goals-container {
+    margin: 100px;
+    border: 1px solid #000;
+    width: 900px;
+    height: 200px;
+}
+
+.add-goal-btn {
+    margin: 100px;
+
+}
+
+.add-goal-form {
+    margin: 100px;
+    border: 1px solid #000;
+    width: 900px;
+    height: 200px;
+}
+
+.add-goal-form form{
+   display: flex;
+   flex-direction: column;
+   align-items:center;
+   width: 100%;
+}
+
+.form-label{
+    padding: 10px;
+}

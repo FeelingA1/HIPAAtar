@@ -21,7 +21,7 @@
     margin: 100px;
     border: 1px solid #000;
     width: 900px;
-    height: 200px;
+    height: 400px;
 }
 
 .add-goal-form form{
@@ -33,4 +33,19 @@
 
 .form-label{
     padding: 10px;
+}
+
+.goal-list {
+  text-align: left;
+}
+
+.list-item{
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #000;
+
+}
+
+.community-goals {
+    display: table;
 }

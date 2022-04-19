@@ -8,6 +8,7 @@ import Portfolio from "./pages/Portfolio"
 import Quizzes from "./pages/Quizzes"
 import Tips from "./pages/Tips"
 import Groups from "./pages/Groups"
+import AvatarGen from "./pages/Avatar";
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
         <Route path='/messages' element={<Messages/>}></Route>
         <Route path='/quizzes' element={<Quizzes/>}></Route>
         <Route path='/tips' element={<Tips/>}></Route>
+          <Route path='/AvatarGen' element={<AvatarGen/>}></Route>
       </Routes>
     </Router>
   );

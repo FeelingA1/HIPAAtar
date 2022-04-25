@@ -1,6 +1,7 @@
 import React from 'react';
 import './Portfolio.css';
 import ChatBox from '../components/ChatBox.js';
+import { Link } from 'react-router-dom';
 const Portfolio = () =>{
   return (
     <div className="portfolio-container">
@@ -8,8 +9,11 @@ const Portfolio = () =>{
         <div className= "avatar-box">
           Avatar {/*place avatar component here*/}
         </div>
-
-        <button className="edit-avatar-btn" onClick={console.log("Editing My Avatar...")}>Edit My Avatar</button>
+          {/*<Link to="/AvatarGen">*/}
+          <a href="http://localhost:8080/" target="_blank">
+             <button className="edit-avatar-btn" >Edit My Avatar</button>
+              </a>
+          {/*</Link>*/}
       </div>
 
       <div className="information-field">  

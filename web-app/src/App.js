@@ -8,6 +8,7 @@ import Portfolio from "./pages/Portfolio"
 import Quizzes from "./pages/Quizzes"
 import Tips from "./pages/Tips"
 import Groups from "./pages/Groups"
+import AvatarGen from "./pages/Avatar";
 import CommunicationTip from "./pages/Tips/CommunicationTip"
 import MentalTip from "./pages/Tips/MentalTip"
 import SleepTip from "./pages/Tips/SleepTip"
@@ -24,6 +25,7 @@ function App() {
         <Route path='/messages' element={<Messages/>}></Route>
         <Route path='/quizzes' element={<Quizzes/>}></Route>
         <Route path='/tips' element={<Tips/>}></Route>
+        <Route path='/AvatarGen' element={<AvatarGen/>}></Route>
         <Route path='/communicationTip' element={<CommunicationTip/>}></Route>
         <Route path='/mentalTip' element={<MentalTip/>}></Route>
         <Route path='/sleepTip' element={<SleepTip/>}></Route>

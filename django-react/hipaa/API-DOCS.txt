@@ -1,0 +1,57 @@
+/api/quiz/
+GET: Based on authentication token passed in header, determines current user and returns 
+all quizes owned by that user if query param self is set to true. Returns all Published
+quizzes otherwise.
+Query Parameters: self: Set to true if you only want quizzes owned by the current user, and missing of false if 
+                        you want all published quizzes instead.
+
+POST: Based on authentication token passed in header, determines current user and creates 
+quiz with that user as the owner.
+Body Parameters: "Title": String representing quiz title
+                 "Published": True or False string 
+
+DELETE: Based on authentication token in header, determines if current user is owner of quiz. If user is 
+validated owner, quiz is deleted, along with all of its questions and answers. 
+Body Parameters: "id": ID of quiz to be deleted
+
+/api/quiz_response/
+GET: Gets all quiz responses of current user based on authentication token, or gets single response if id is specified as query param
+Query Parameters: id: ID of desired response. Optional.
+
+/api/question/
+GET:Passed a query parameter indicating the id of the quiz that the questions belong to. If the token passed in header is verified to
+belong to the owner of the quiz, all questions for that quiz are returned in JSON. 
+Query Parameters: quiz: represents id of quiz to qhich questions belong
+
+POST:Creates a question for quiz if passed token matches the owner of the quiz. Fields are passed in the body.
+Body Parameters: quiz: ID of quiz to which question will be added
+                 text: Text representing the question
+                 type: Indicates question type, acception values "True/False", "Multiple Choice", and "Text"
+
+/api/answer/
+GET: Passed a query parameter, question, which indicates ID of question to which an answer belongs. Returns all answers belonging to given question
+if the user is the owner of the quiz to which the question belongs.
+Query Parameters: question: ID of question to which the answer is to be added 
+
+POST: Creates an answer based on parameters passed in body, if the header token matches the owner of the quiz to which the parent question belongs.
+Body Parameters: question: ID of question to which answer is to be added    
+                 text: Text representing the answer
+
+POST:
+/api/auth/register/
+POST: Creates a user using the given body parameters, logging the user in and returning an authentication token.
+Body Parameters: "username": Username of user to be created
+                 "password": Password of user to be created. The password is automatically encrypted in transit.
+                 "email": Email of user to be created
+
+/api/auth/login/
+POST: Attempts to log user in based on given body parameters, returning an authentication token if successful.
+Body Parameters: "username": Username of user to be logged in
+                 "password": Password of user to be logged in. The password is automatically encrypted in transit.
+
+/api/message
+GET: Retrieves all messages to or from user based on authentication token passed, or retrieves all messages from given query parameter
+if the parameter passed is the id of a conversation that the user has access to.
+Query Parameters: convo: OPTIONAL parameter which serves as the id of a conversation. Response will include all messages in that conversation if the 
+                    user has access.
+
